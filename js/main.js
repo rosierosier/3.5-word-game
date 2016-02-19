@@ -39,15 +39,29 @@ document.addEventListener('click', function(e){
       guess = true;
     }
   })
-  if (guess = false){
+  if (guess == false){
     missedLetter -=1;
+    alert('You have ' + missedLetter + ' misses left!');
     }
   if (missedLetter == 0){
     alert('you lose');
-    var div = docuemnt.getElementById('container');
-    while(dir.firstChild){
+    var div = document.getElementById('container');
+    while(div.firstChild){
       div.removeChild(div.firstChild);
+    }
   }
+  var youWin = true
+  guessedWord.forEach(function(value, index, array){
+    if (array[index] == ' _ '){
+      youWin = false;
+    }
+  })
+  console.log('working');
+  if (youWin == true) {
+    alert('you win!');
+    var div = document.getElementById('container');
+    while(div.firstChild){
+      div.removeChild(div.firstChild);
+    }
   }
-
 });
