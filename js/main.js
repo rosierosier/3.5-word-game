@@ -4,10 +4,12 @@ var guessedWord = [];
 var wordArray = [];
 var missedLetter = 8;
 
+while(currentWordLength < 3){
 var random = Math.floor((Math.random() * 100) + 1)
 currentWord = commonWords[random];
-
 currentWordLength = currentWord.length;
+}
+
 for(var i = 0; i < currentWordLength; i++){
   guessedWord[i] = ' _ ';
 }
